@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Y Ambientación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations and effects */
+        .nav-scroll {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item {
+            transition: all 0.5s ease;
+            opacity: 0.9;
+        }
+        
+        .gallery-item:hover {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+        
+        .active-section {
+            color: #8B5A2B;
+            font-weight: 600;
+        }
+        
+        /* Animation for gallery */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .gallery-animation {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Fixed Navigation Bar -->
+    <nav id="navbar" class="fixed w-full z-50 py-4 px-6 transition-all duration-300" role="navigation">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-couch text-amber-800 text-xl" aria-hidden="true"></i>
+                </div>
+                <span class="text-xl font-semibold text-gray-800">Diseño & Ambientación con Durlock</span>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link hover:text-amber-700 transition">Nosotros</a>
+                <a href="#services" class="nav-link hover:text-amber-700 transition">Servicios</a>
+                <a href="#gallery" class="nav-link hover:text-amber-700 transition">Galería</a>
+                <a href="#contact" class="nav-link hover:text-amber-700 transition">Contacto</a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-800">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 shadow-lg rounded-lg mt-2">
+            <div class="flex flex-col space-y-3">
+                <a href="#about" class="nav-link hover:text-amber-700 transition">Nosotros</a>
+                <a href="#services" class="nav-link hover:text-amber-700 transition">Servicios</a>
+                <a href="#gallery" class="nav-link hover:text-amber-700 transition">Galería</a>
+                <a href="#contact" class="nav-link hover:text-amber-700 transition">Contáctanos</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero/About Us Section -->
+    <section id="about" class="hero-section min-h-screen flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Transformamos tus Espacios</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Diseños únicos con material durlock.</p>
+            <div class="bg-white bg-opacity-90 p-8 rounded-lg max-w-4xl mx-auto text-gray-800">
+                <h2 class="text-2xl font-semibold mb-4 text-amber-800">Nuestra Misión</h2>
+                <p class="text-lg mb-4">En Diseño & Ambientación, creamos espacios armoniosos que reflejan la personalidad de nuestros clientes, optimizando la funcionalidad y la estetica. Nuestro enfoque combina principios de diseño atemporales con soluciones innovadoras para crear entornos que perduren en el tiempo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">Nuetros Servicios</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Ofrecemos soluciones de diseño integrales adaptadas a sus necesidades y estilo de vida únicos.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-home text-amber-800 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Cielo Raso Personalizado</h3>
+                    <p class="text-gray-600">Transforma tus espacios con un toque único y sofisticado. Nuestro servicio de cielo raso personalizado está diseñado para adaptarse a tus gustos, necesidades y estilo arquitectónico. Ya sea que busques un diseño moderno, clásico o innovador, creamos techos que no solo embellecen, sino que también optimizan la iluminación, la acústica y la sensación de amplitud en cada ambiente.</p>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-building text-amber-800 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Muebles a Medida</h3>
+                    <p class="text-gray-600">Creamos muebles únicos, diseñados especialmente para ti y tu espacio. Combinamos funcionalidad, estilo y materiales de calidad para ofrecer soluciones personalizadas que se adaptan a tus necesidades y reflejan tu personalidad.
+
+Diseño que se adapta a tu vida.</p>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-palette text-amber-800 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Separaciones de Ambientes</h3>
+                    <p class="text-gray-600">Optimizamos tus espacios con divisiones funcionales y estéticas. Diseñamos separadores que integran estilo y practicidad, ideales para oficinas, hogares y locales comerciales. Lográ privacidad sin perder luminosidad ni amplitud.
+
+Espacios conectados, pero bien definidos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">Alguno de Nuetros Trabajos</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Explore nuestros proyectos recientes que muestran nuestra filosofía de diseño y atención al detalle.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item gallery-animation overflow-hidden rounded-lg shadow-lg">
+			<img src="image/R.jpg" alt="Sala de estar moderna"
+                         class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item gallery-animation overflow-hidden rounded-lg shadow-lg">
+                    <img src="image/fondo2.jpg" alt="kk"
+                         alt="Elegant Dining Area" 
+                         class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item gallery-animation overflow-hidden rounded-lg shadow-lg">
+                    <img src="image/OIP (1).jpg" alt="oona"
+                         alt="Contemporary Bedroom" 
+                         class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item gallery-animation overflow-hidden rounded-lg shadow-lg">
+                      <img src="image/OIP (5).jpg" alt="oona"
+                         alt="Minimalist Office" 
+                         class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item gallery-animation overflow-hidden rounded-lg shadow-lg">
+                      <img src="image/2.jpg" alt="oona"
+                         alt="Luxury Bathroom" 
+                         class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item gallery-animation overflow-hidden rounded-lg shadow-lg">
+                      <img src="image/3.jpg" alt="oona"
+                         alt="Cozy Reading Nook" 
+                         class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="px-6 py-3 bg-amber-100 text-amber-800 rounded-full font-medium hover:bg-amber-200 transition">
+                    Contáctanos Y Cuéntanos tu Proyecto
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">Contáctanos</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Nos encantaría conocer tu proyecto y conversar sobre como podemos hacer realidad tu visión.</p>
+            
+            <div class="max-w-4xl mx-auto bg-white p-10 rounded-lg shadow-md">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 text-amber-800">Diseño & Ambientación</h3>
+                        <p class="text-gray-600 mb-6">Universitario de Hoprizonte 1<br>Córdoba, Capital<br>Argentina</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone-alt text-amber-700 mr-4"></i>
+                                <span class="text-gray-800">+54 (351) ********</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-amber-700 mr-4"></i>
+                                <span class="text-gray-800">hello@diseñoyambientacion.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 text-amber-800">Conáctate con nosotros</h3>
+                        <p class="text-gray-600 mb-6">Síguenos en redes sociales para inspirarte en diseño y mantenerte al día sobre nuestros últimos proyectos.</p>
+                        
+                        <div class="flex space-x-6">
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-100 hover:text-amber-800 transition">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-100 hover:text-amber-800 transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-100 hover:text-amber-800 transition">
+                                <i class="fab fa-pinterest-p text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-amber-100 hover:text-amber-800 transition">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">© 2025 Diseño & Ambientación | Created by I.Frontroth</p>
+           <!--<div class="flex justify-center space-x-6">
+                <a href="#" class="hover:text-amber-300 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-amber-300 transition">Terms of Service</a>
+                <a href="#" class="hover:text-amber-300 transition">Careers</a>
+            </div>-->
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scroll');
+            } else {
+                navbar.classList.remove('nav-scroll');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Highlight active section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-section');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active-section');
+                }
+            });
+        });
+
+        // Gallery animation on scroll
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('gallery-animation');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        galleryItems.forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+    <script>
+    const menuBtn = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+
+    // Sticky navbar style on scroll
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 10) {
+            navbar.classList.add("nav-scroll");
+        } else {
+            navbar.classList.remove("nav-scroll");
+        }
+    });
+</script>
+</body>
+</html>
